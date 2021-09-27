@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+    <!-- Jquery -->
+    <script type="text/javascript" src="{%static 'js/jquery-2.0.0.min.js'%}"></script>
+    <!-- bootstrap -->
+    <script type="text/javascript" src="{%static 'js/bootstrap.bundle.min.js'%}"></script>
+    <link type='text/css' rel="stylesheet" href="{%static 'css/bootstrap.css'%}">
+    <link type='text/css' rel="stylesheet" href="{%static 'fonts/fontawesome/css/all.min.css'%}">
+    <!-- custom style -->
+    <link type='text/css' rel="stylesheet" href="{%static 'css/ui.css'%}">
+    <link rel="stylesheet" href="{%static 'css/responsive.css'%}" media="only screen and (max-width: 1200px)">
+    <!-- custom javascript -->
+    <script type='text/javascript' src="{%static 'js/script.js'%}"></script>
+    <script type='text/javascript'>
+        $(document).ready(function() {
+
+        })
+    </script>
+    <title>ecommerce</title>
+</head>
+<body>
+{%include 'includes/navbar.html'%}
+    {%block content%}
+    
+    {%endblock%}
+{%include 'includes/footer.html'%}
