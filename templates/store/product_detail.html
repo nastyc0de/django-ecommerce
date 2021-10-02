@@ -28,7 +28,7 @@
         </aside>
         <main class="col-md-6 border-left">
 
-          <form action="#" method="POST">
+          <form action="{% url 'add_cart' findProduct.id %}" method="POST">
             {% csrf_token %}
 
             <article class="content-body">
@@ -72,7 +72,7 @@
                   <h6>Seleccione Talla</h6>
                   <select class="form-control" name="talla" required>
                     <option value="" disabled selected>Seleccione</option>
-                    {% for i in findProduct.variation_set.tallas %}
+                    {% for i in findProduct.variation_set.sizes %}
                     <option value="{{ i.variation_value | lower }}">{{ i.variation_value | capfirst }}</option>
                     {% endfor %}
                   </select>
@@ -83,7 +83,8 @@
               {% if findProduct.stock <= 0 %}
               <h5>Producto fuera de stock</h5>
               {% else %}
-                <button type="submit"  class="btn  btn-primary"> <span class="text">Agregar al shopping cart</span> <i class="fas fa-shopping-cart"></i>  </button>
+                <button type="submit" class="btn  btn-primary"> <span class="text">Agregar al shopping cart</span> <i class="fas fa-shopping-cart"></i>  </button>
+
               {% endif %}
 
 
